@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2 class = 'text-danger text-center'>This is form api render form page</h2>
+
+  <table class="table w-50 m-auto">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">rating</th>
+          <th scope="col">date</th>
+
+
+        
+        </tr>
+
+        <tr>
+
+          <td>{{form.name}}</td>
+          <td>{{form.email}}</td>
+          <td>{{password}}</td>
+          <td>{{form.rating}}</td>
+          <td>{{form.date}}</td>
+
+
+        </tr>
+        <br>
+
+        <tr>
+          <th scope="col">Age</th>
+          <th scope="col">Income per capital</th>
+          <th scope="col">duration</th>
+          <th scope="col">weight</th>
+          <th scope="col">working_hour</th>
+        </tr>
+        <tr>
+          <td>{{form.age}}</td>
+          <td>{{form.income_per_capital}}</td>
+          <td>{{form.duration}}</td>
+          <td>{{form.weight}}</td>
+          <td>{{form.working_hour}}</td>
+
+        </tr>
+  <br>
+
+        <tr>
+          <th scope="col">hobbies</th>
+          <th scope="col">isAddult</th>
+          <th scope="col">rebex</th>
+          <th scope="col">url</th>
+          <th scope="col">time</th>
+        </tr>
+
+        <tr>
+          <td>{{form.hobbies}}</td>
+          <td>{{form.isAddult}}</td>
+          <td>{{form.rebex}}</td>
+          <td>{{form.url}}</td>
+          <td>{{form.time}}</td>
+        </tr>
+    </table>
+
+
+
+{% endblock content %}

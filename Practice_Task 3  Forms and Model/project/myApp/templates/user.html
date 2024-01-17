@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class = 'text-center text-success'>This is Form API Page</h1>
+
+{% load crispy_forms_tags %}
+
+{% comment %} {{user | crispy}} {% endcomment %}
+{% comment %} {{user.as_ul}} {% endcomment %}
+<form method = "POST" enctype = 'multipart/form-data' class = 'w-75 m-auto pt-5'>
+
+    {% csrf_token %}
+    {{user | crispy}}
+    <input class = 'btn btn-success' type="submit" value="Submit">
+</form>
+{% endblock content %}
