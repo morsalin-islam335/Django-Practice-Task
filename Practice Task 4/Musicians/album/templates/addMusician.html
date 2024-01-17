@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class = 'bg-success text-center text-info'>
+    This is add Musician Page
+</h1>
+
+<form method = "POST" enctype = 'multipart/form-data' class = 'm-auto mt-5 w-50'>  {% comment %} enctype file jodi soho newar jonno {% endcomment %}
+
+    {% load crispy_forms_tags %}
+    {% csrf_token %}
+
+    {{form | crispy}}
+
+    <button type="submit">submit</button>
+
+</form>
+{% endblock content %}
