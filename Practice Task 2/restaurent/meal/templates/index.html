@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1 class = 'text-center text-success bg-warning me-6' style = 'padding-bottom:5px;'>মায়ের দোয়া রেস্টুরেন্ট</h1>
+    <div class = 'px-3 d-flex flex-wrap justify-content-center' style = 'gap:8px; padding-bottom:5px'>
+        {% for card in cards  %}
+        <div class="card" style="width: 330px; height: 650px">
+            <img src= {{card.strMealThumb}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{card.strMeal}}</h5>
+              <p class="card-text">{{card.text |truncatechars:250}}</p>
+              <a href="#" class = 'btn btn-success'>Show Details</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+
+{% endblock  %}
