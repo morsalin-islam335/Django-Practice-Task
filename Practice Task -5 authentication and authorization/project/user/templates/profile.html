@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to your profile {{user.first_name}}</h1>
+{% endblock content %}
+
+
+{% block menubar %}
+
+
+     <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'updateProfile'%}">Update Profile</a>
+     </li>
+     <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'changePass1'%}">Change Password with Old</a>
+     </li>
+     <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'changePass2'%}">Change Password without old</a>
+     </li>
+{% endblock menubar %}
