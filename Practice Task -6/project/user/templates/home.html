@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+
+{% block content %}
+     <h1 class="text-success text-center bg-info">This is homepage</h1>
+
+     <style>
+          table,tr,th,td{
+               border:1px solid black;
+               text-align:center;
+          }
+     
+
+     </style>
+     <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Musician Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Album Rating</th>
+              <th scope="col">Instrument Type</th>
+              <th scope="col">Album Name</th>
+              <th scope="col">Relese Date</th>
+              <th style = 'width:200px' scope="col">Actions</th>
+            </tr>
+          </thead>
+               {% for album in albums %}
+               <tr>
+                    <td >{{album.musician.first_name}} {{album.musician.last_name}}</td>
+                    <td >{{album.musician.email}}</td>
+                    <td >{{album.rating}}</td>
+                    <td >{{album.musician.instrument_type}}</td>
+                    <td >{{album.album_name}}</td>
+                    <td >{{album.album_release_date}}</td>
+                    <td ><a href = '{% url "editAlbum" album.id %}' class = 'btn btn-warning'>Edit</a> <a href = '{% url "deleteMusician" album.musician.id %}' class = 'btn btn-danger'>Delete</a></td>
+                 </tr>
+         
+               {% endfor %}
+        </table>
+
+{% endblock content %} 
+
+{% block menubar %}
+
+
+     <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url "addMusician" %}">Add Musician</a>
+     </li>
+     <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url "addAlbum" %}">Add Album</a>
+     </li>
+
+{% endblock menubar %}

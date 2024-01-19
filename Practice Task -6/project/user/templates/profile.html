@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class = 'bg-info text-center text-success'>Welcome to your profile {{user.first_name}} {{user.last_name}}</h1>
+
+     <div class = 'd-flex justify-content-center mt-5'>
+          <div style = 'width: 200px; height:200px; border:3px solid white;'>
+               <div class  = 'btn btn-info ps-3 ms-3 pe-3'><a href="{% url 'updateProfile'%}" class = 'text-decoration-none text-white'>Update Profile</a></div>
+               <div class = 'btn btn-secondary mt-2 '><a href="{% url 'changePass1'%}" class = 'text-decoration-none text-white'>Change Password With Old Password</a></div>
+               <div class = 'btn btn-warning mt-2'><a href="{% url 'changePass2'%}" class = 'text-decoration-none text-white'>Change Password Without Old Password</a></div>
+          </div>
+     </div>
+{% endblock content %}
+
+
+
